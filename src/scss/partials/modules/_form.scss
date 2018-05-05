@@ -1,0 +1,30 @@
+.upload-btn-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  padding: $space-base 0;
+  position: relative;
+}
+
+.upload-btn {
+  border: 1px solid $color-cta;
+  color: $color-cta;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: $font-size;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.form {
+  background: url("../img/bgi-form.jpg") no-repeat center / cover;
+  padding: $space-base;
+  width: 100%;
+  margin: 0;
+}

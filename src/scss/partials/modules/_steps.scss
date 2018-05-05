@@ -1,0 +1,38 @@
+.steps__img {
+	display: block;
+	margin: 0 auto;
+	padding: $space-base 0;
+	width: 70px;
+
+	@include query(768px) {
+		margin: initial;
+	}
+}
+
+.steps__text {
+	text-align: center;
+
+	@include query(768px) {	
+		text-align: left;
+	}
+}
+
+.step1 {
+	@include query(768px) {
+		width: 65%;
+	}
+
+	@include query(900px) {
+		width: 73%;
+	}
+}
+
+.step2 {
+	@include query(768px) {
+		width: 30%;
+	}
+
+	@include query(900px) {
+		width: 23%;
+	}
+}

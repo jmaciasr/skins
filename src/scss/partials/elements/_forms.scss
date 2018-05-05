@@ -1,0 +1,63 @@
+form {
+	margin: 0 10%;
+	border-radius: $radius-principal;
+}
+
+input,
+textarea,
+select {
+	border: 1px solid $color-cta;
+	border-radius: $radius-principal;
+	color: #000;
+	font-family: $font-base;
+	font-size: $font-size;
+	display: block;
+	padding: 10px;
+	margin-bottom: $space-out-medium;
+	margin-top: $space-out-small;
+	width: 100%;
+
+	@include query(1200px) {
+		font-size: 20px;
+	}
+
+	&::placeholder {
+	    color: #fff;
+	    opacity: 1; /* Firefox */
+	}
+}
+
+label {
+	display: block;
+	font-size: $font-size;
+	margin-top: $space-out-small;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: inline-block;
+    margin: 0 $space-out-small $space-out-medium 0;
+    width: 25px;
+}
+
+button {
+	color: red;
+	border-radius: $radius-btn;
+	color: #fff;
+	display: block;
+	border-radius: $radius-btn;
+	margin: $space-out-small 0;
+	padding: $space-base $space-large;
+
+	&:hover {
+		color: $color-base;
+	}
+}
+
+input::placeholder {
+  color: $color-cta;
+}
+
+input[type="submit"] {
+	width: 50%;
+}

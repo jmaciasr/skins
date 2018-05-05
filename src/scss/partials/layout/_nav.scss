@@ -1,0 +1,50 @@
+nav {
+	background-color: #000;
+	color: #000;
+	font-size: $font-size;
+	text-align: center;
+}
+
+.nav__logo, 
+.language {
+
+	@include query(500px) {
+		display: inline;
+	}
+}
+
+.nav__logo {	
+	img {
+		width: 250px;
+		padding: $space-base 0 $space-base 5%;
+
+
+		@include query(900px) {
+			width: 350px;          
+		}   
+	}
+	
+	a {
+		border: none;
+
+		&:hover {
+			border: none;
+		}
+	}
+}
+
+.language {
+	background-color: #fff;
+	padding: 10px $space-base;
+	text-align: center;
+	width: 100%;
+
+	a {
+		border: none;
+		color: #000;     
+
+		&:hover {
+			color: $color-hover;
+		}
+	}
+}

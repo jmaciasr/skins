@@ -1,0 +1,27 @@
+.sended {
+	text-align: center;
+	padding-bottom: $space-out-xx-large;
+
+	h1 {
+		border-left: 0;
+		display: inline-block;
+    	line-height: 1.5;
+		margin: $space-out-medium;
+		padding: $space-base 0;
+	}
+
+	h2 {
+		margin: 0;
+	}
+}
+
+.sended__img-top {
+	display: block;
+	margin: 0 auto;
+	margin-top: $space-out-medium;
+	width: 70%;
+
+	@include query(900px) {
+		width: 20%;	
+	}
+}

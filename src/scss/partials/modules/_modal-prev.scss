@@ -1,0 +1,35 @@
+.modal-prev {
+	background-color: rgba(0, 0, 0, .5);
+	height: 100%;
+	margin: 0 auto;
+	position: absolute;
+	width: 100%;
+	z-index: 3;
+}
+
+.modal-prev__media {
+    left: 50%;
+	position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;  
+    width: 92%;
+}
+
+.modal-prev__img {
+	border: 5px solid #fff;
+	width: 100%;
+}
+
+.modal-prev__exit {
+	position: absolute;
+	border-radius: 50%;
+	top: 5%;
+	right: 4%;
+	background-color: #fff;
+	font-size: 20px;
+	padding: 3px 13px;
+
+	&:hover {
+		cursor: pointer;
+	}
+}

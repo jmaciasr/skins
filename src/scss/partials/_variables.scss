@@ -1,0 +1,33 @@
+//fonts
+$font-base: 'Oswald', sans-serif;; 
+$font-size: 18px;
+
+//colors
+$color-base: rgba(0, 0, 0, 0.9);
+$color-contrast: #021e27;
+$color-cta: #bbb;
+$color-hover: #0f2765;
+
+// Inside components
+$space-base: 1rem;
+$space-small: 2rem; //32px
+$space-medium: 4rem; // 56px
+$space-large: 6rem; // 100px
+$space-x-large:10rem; // 160px
+$space-xx-large:12rem; // 192px
+
+// Between components
+$space-out-small: 1.25rem; // 20px
+$space-out-medium: 2rem; // 32px
+$space-out-large: 4rem; // 56px
+$space-out-x-large: 10rem; // 160px
+$space-out-xx-large: 15rem; // 240px
+
+// border radius 
+$radius-principal: 10px;
+$radius-btn: 10px;
+
+// shadows 
+$shadow-soft:  0px 2px 10px #000;
+$shadow-mid:  0px 2px 20px #000;
+$shadow-hard:  5px 5px 15px #000;

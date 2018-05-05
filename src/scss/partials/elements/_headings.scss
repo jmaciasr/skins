@@ -1,0 +1,55 @@
+// Normalize
+// ==========================================================================
+// Correct the font size and margin on `h1` elements within `section` and
+// `article` contexts in Chrome, Firefox, and Safari.
+h1,
+h2,
+h3,
+h4 {
+  	font-family: $font-base;
+  	font-weight: 700;
+}
+
+h1 {
+	border-left: 5px solid $color-base;	
+	font-size: 38px;
+  	line-height: .8;
+  	padding: 0 0 0 10px;	
+
+	@include query(624px) {
+		font-size: 50px;
+	}
+}
+
+h2 {
+	font-size: 30px;
+	margin: $space-out-large 0;
+
+	@include query(400px) {
+		font-size: 40px;
+	}
+}
+
+h3 {
+	font-size: 20px;
+
+	@include query(400px) {
+		font-size: 36px;
+	}
+}
+
+h4 {
+	font-size: 34px;
+
+	@include query(400px) {
+		font-size: 30px;
+	}
+}
+
+h5 {
+	font-size: $font-size;
+
+	@include query(400px) {
+		font-size: 24px;
+	}
+}

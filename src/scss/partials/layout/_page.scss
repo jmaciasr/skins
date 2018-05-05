@@ -1,0 +1,48 @@
+section {
+  padding-bottom: $space-medium;
+}
+
+.l-content {
+  margin: 0 auto;
+  width: 90%;
+
+  @include query(900px) {
+    width: 95%;
+  }
+}
+
+.l-group {
+    @include micro-clearfix;
+}
+
+.group {
+  margin: 0 auto;
+  max-width: 80%;
+  
+  // @include query(000px) {
+  //   padding: 0 $space-base;
+  // }
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.make-hidden {
+  display: none;
+}
+
+.make-visible {
+  display: initial;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.flex-row--between {
+  justify-content: space-between;
+}
