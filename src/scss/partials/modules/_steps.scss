@@ -1,3 +1,15 @@
+.number {
+	margin-bottom: $space-out-large;
+
+	img {
+		margin: 0 auto;
+	}
+
+	p {
+		text-align: center;
+	}
+}
+
 .steps__img {
 	display: block;
 	margin: 0 auto;
@@ -14,25 +26,5 @@
 
 	@include query(768px) {	
 		text-align: left;
-	}
-}
-
-.step1 {
-	@include query(768px) {
-		width: 65%;
-	}
-
-	@include query(900px) {
-		width: 73%;
-	}
-}
-
-.step2 {
-	@include query(768px) {
-		width: 30%;
-	}
-
-	@include query(900px) {
-		width: 23%;
 	}
 }

@@ -59,5 +59,13 @@ input::placeholder {
 }
 
 input[type="submit"] {
+	background-color: $color-hover;
+	color: #bbb;
+	transition: all .3s;
 	width: 50%;
+
+	&:hover {
+		color: #fff;
+		cursor: pointer;
+	}
 }

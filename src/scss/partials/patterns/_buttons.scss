@@ -3,7 +3,9 @@
 	color: #fff;
 	cursor: pointer;
 	display: inline-block;
+	text-align: center;
 	transition: all .3s;
+	width: 20%;
 }
 
 .btn--principal {
@@ -19,15 +21,15 @@
 }
 
 .btn--secundary {
-	background-color: transparent;
-	border: 2px solid $color-base;
-	padding: 5px 30px;
-	
+	background-color: $color-cta;
+	border-radius: $radius-btn;
+	margin: $space-out-small 0;
+	padding: $space-base $space-out-small;
+
 	&:hover {
-		background-color: $color-cta;
-		border: 2px solid $color-cta;
-		color: #fff;		
-    }
+		background-color: $color-hover;
+		color: #fff;
+	}
 }
 
 // .btn--upload {

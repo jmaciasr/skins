@@ -1,0 +1,29 @@
+.step1 {
+	display: hidden;
+}
+
+.step1__catalog {
+	@include query(768px) {
+		width: 65%;
+	}
+
+	@include query(900px) {
+		width: 73%;
+	}
+}
+
+.step1__form {
+
+	@include query(768px) {
+		width: 30%;
+	}
+
+	@include query(900px) {
+		width: 23%;
+	}
+}
+
+.step1-message {
+	color: $color-alert;
+	text-align: center;
+}
