@@ -47,6 +47,9 @@
 	  </title>
 	</head>
 	<body class="main-page">
+		<div id="preloader">
+		  <div id="status">&nbsp;</div>
+		</div>
 		<nav id="navigation">
 			<div class="nav__logo">
 				<a href="index.html">
@@ -298,10 +301,6 @@
 		          <input id="formSkinDomain1" placeholder="Web site name - first option" type="text" name="skinDomain1" required>
 		          <input id="formSkinDomain2" placeholder="Web site name - second option" type="text" name="skinDomain2" required>
 		          <input id="formSkinSelect" placeholder="Skin" type="text" name="skinSelected" disabled="disabled" required>
-				      <!--	<div class="upload-btn-wrapper">
-							  <div class="upload-btn">Upload Logo</div>
-							  <input placeholder="" type="file" name="file" required>
-							</div> -->
 							<input id="btnStep1" type="submit" value="Next" class="btn btn--principal">
 			      </form>
 						<p id="step1Message" class="make-hidden step1-message">
@@ -310,7 +309,7 @@
 					</section>				
 				</div>				
 			</div>
-			<div id="step2" class="step2">
+			<div id="step2" class="step2 make-hidden">
 				<section class="l-content agent-setting">
 					<div class="number">
 						<img src="img/2.svg" alt="number 1" class="steps__img">
@@ -318,50 +317,62 @@
 							Complete your profile
 						</p>						
 					</div>
-					<form method="post" action="skin.php" class="step2-form">
+					<form method="post" action="profile.php" class="step2-form">
 	          <input id="skinAgent" placeholder="User" type="text" name="skinAgent" class="make-hidden">
 	          <input id="skinDomain1" placeholder="Web site name - first option" type="text" name="skinDomain1" class="make-hidden">
 	          <input id="skinDomain2" placeholder="Web site name - second option" type="text" name="skinDomain2" required class="make-hidden">
 	          <input id="skinSelected" placeholder="Skin" type="text" name="skinSelected" class="make-hidden">
 	          <!--wizard-->
 	          <div id="basicLimit" class="wizardStep step2__wizard">
+							<h5>
+	          		1 / 6
+	          	</h5>
 		          <h4>
 		          	Basic bet limits
 		          </h4>
-							<label for="">Maximum bet</label>
-		          <input id="basicLimit1" placeholder="$" type="Number" name="skinAgent" min="1" required>
-		          <label for="">Minimum bet online</label>
-		          <input id="basicLimit2" placeholder="$" type="Number" name="skinAgent" min="1" required>
-		          <label for="">Minimum bet phone</label>
-		          <input id="basicLimit3" placeholder="$" type="Number" name="skinAgent" min="1" required>      	
+							<label for="basicMaxBet">Maximum bet</label>
+		          <input id="basicLimit1" placeholder="$" type="Number" name="basicMaxBet" min="1" required>
+		          <label for="basicMinBetOnline">Minimum bet online</label>
+		          <input id="basicLimit2" placeholder="$" type="Number" name="basicMinBetOnline" min="1" required>
+		          <label for="basicMinBetPhone">Minimum bet phone</label>
+		          <input id="basicLimit3" placeholder="$" type="Number" name="basicMinBetPhone" min="1" required>      	
 	          </div>
 	          <div id="casinoLimit" class="wizardStep step2__wizard make-hidden">
-		          <h4>
-		          	Regular Casino limits
-		          </h4>
-							<label for="">Daily win</label>
-		          <input id="casinoLimit1" placeholder="$" type="Number" name="skinAgent" min="1" required>
-		          <label for="">Daily lost</label>
-		          <input id="casinoLimit2" placeholder="$" type="Number" name="skinAgent" min="1" required>
-		          <label for="">Weekly win</label>
-		          <input id="casinoLimit3" placeholder="$" type="Number" name="skinAgent" min="1" required>
-		          <label for="">Weekly lost</label>
-		          <input id="casinoLimit4" placeholder="$" type="Number" name="skinAgent" min="1" required>      	
-	          </div>
-	          <div id="onlineCasinoLimit" class="wizardStep step2__wizard make-hidden">
+	          	<h5>
+	          		2 / 6
+	          	</h5>
 		          <h4>
 		          	Online Casino limits
 		          </h4>
 							<label for="">Daily win</label>
-		          <input id="onlineCasinoLimit1" placeholder="$" type="Number" name="skinAgent" min="1" required>
+		          <input id="casinoLimit1" placeholder="$" type="Number" name="casinoDailyWin" min="1" required>
 		          <label for="">Daily lost</label>
-		          <input id="onlineCasinoLimit2" placeholder="$" type="Number" name="skinAgent" min="1" required>
+		          <input id="casinoLimit2" placeholder="$" type="Number" name="casinoDailyLost" min="1" required>
 		          <label for="">Weekly win</label>
-		          <input id="onlineCasinoLimit3" placeholder="$" type="Number" name="skinAgent" min="1" required>
+		          <input id="casinoLimit3" placeholder="$" type="Number" name="casinoWeeklyWin" min="1" required>
 		          <label for="">Weekly lost</label>
-		          <input id="onlineCasinoLimit4" placeholder="$" type="Number" name="skinAgent" min="1" required>      	
+		          <input id="casinoLimit4" placeholder="$" type="Number" name="casinoWeeklyLost" min="1" required>      	
+	          </div>
+	          <div id="onlineCasinoLimit" class="wizardStep step2__wizard make-hidden">
+	          	<h5>
+	          		3 / 6
+	          	</h5>
+		          <h4>
+		          	Live Casino limits
+		          </h4>
+							<label for="">Daily win</label>
+		          <input id="onlineCasinoLimit1" placeholder="$" type="Number" name="liveCasinoDailyWin" min="1" required>
+		          <label for="">Daily lost</label>
+		          <input id="onlineCasinoLimit2" placeholder="$" type="Number" name="liveCasinoDailyLost" min="1" required>
+		          <label for="">Weekly win</label>
+		          <input id="onlineCasinoLimit3" placeholder="$" type="Number" name="liveCasinoWeeklyWin" min="1" required>
+		          <label for="">Weekly lost</label>
+		          <input id="onlineCasinoLimit4" placeholder="$" type="Number" name="liveCasinoWeeklyLost" min="1" required>      	
 	          </div>
 	          <div id="horsesLimit" class="wizardStep step2__wizard make-hidden">
+	          	<h5>
+	          		4 / 6
+	          	</h5>
 		          <h4>
 		          	Horses limits
 		          </h4>
@@ -374,12 +385,13 @@
 			          <label for="">No</label>
 		  					<input id="horsesLimit2" type="radio" name="horsesProfile" value="No">	          	
 		          </div>
-							<label for="">Maximum bet</label>
-		          <input id="horsesLimit3" placeholder="$" type="Number" name="skinAgent" min="1" required>
-		          <label for="">Maximum payout</label>
-		          <input id="horsesLimit4" placeholder="$" type="Number" name="skinAgent" min="1" required>      	
+		          <input id="horsesLimit3" placeholder="Maximum bet $" type="Number" name="horsesProfileMaxBet" min="1" required>
+		          <input id="horsesLimit4" placeholder="Maximum payout $" type="Number" name="horsesProfileMaxPayout" min="1" novalidate>      	
 	          </div>
 	          <div id="parlaysLimit" class="wizardStep step2__wizard make-hidden">
+	          	<h5>
+	          		5 / 6
+	          	</h5>
 		          <h4>
 		          	Parlays limits
 		          </h4>
@@ -391,105 +403,84 @@
 		          <input id="parlaysLimit3" placeholder="$" type="Number" name="parlayMaxBet" min="1" required>
 		          <label for="">Maximum payout</label>
 		          <input id="parlaysLimit4" placeholder="$" type="Number" name="parlayMaxPayout" min="1" required>
-		          <label for="">Pay true odds</label>
-		          <div class="input-radius">
-			          <label for="">Yes</label>
-			          <input id="parlaysLimit5" type="radio" name="PayTrueOdds" value="Yes" checked>     	
-		          </div>
-		          <div class="input-radius">
-			          <label for="">No</label>
-		  					<input id="parlaysLimit6" type="radio" name="PayTrueOdds" value="No">	          	
-		          </div>
-		          <label for="">Porcent</label>
-		          <input id="parlaysLimit7" placeholder="%" type="Number" name="parlayPorcent" min="1" required>
 		          <h4>
 		          	allow
 		          </h4>
 		          <label for="">Open parlays</label>
 		          <div class="input-radius">
 			          <label for="">Yes</label>
-			          <input id="parlaysLimit8" type="radio" name="openParlays" value="Yes" checked>     	
+			          <input id="parlaysLimit5" type="radio" name="openParlays" value="Yes" checked>     	
 		          </div>
 		          <div class="input-radius">
 			          <label for="">No</label>
-		  					<input id="parlaysLimit9" type="radio" name="openParlays" value="No">         	
+		  					<input id="parlaysLimit6" type="radio" name="openParlays" value="No">         	
 		          </div>
+		          <input id="parlaysLimit7" placeholder="How many spots" type="Number" name="parlaySpots" min="1" novalidate>
 		          <label for="">Round robin</label>
 		          <div class="input-radius">
 			          <label for="">Yes</label>
-			          <input id="parlaysLimit10" type="radio" name="roundRobin" value="Yes" checked>     	
+			          <input id="parlaysLimit8" type="radio" name="roundRobin" value="Yes" checked>     	
 		          </div>
 		          <div class="input-radius">
 			          <label for="">No</label>
-		  					<input id="parlaysLimit11" type="radio" name="roundRobin" value="No">	          	
+		  					<input id="parlaysLimit9" type="radio" name="roundRobin" value="No">	          	
 		          </div>
-		          <label for="">Maximum round robin bet</label>
-		          <input id="parlaysLimit12" placeholder="$" type="Number" name="maxRobinBet" min="1" required>
-		          <label for="">Maximum round robin payout</label>
-		          <input id="parlaysLimit13" placeholder="$" type="Number" name="maxRobinPayout" min="1" required>      	
+		          <div id="parlaysLimit10">
+			          <label for="">Maximum round robin bet</label>
+			          <input placeholder="$" type="Number" name="maxRobinBet" min="1" novalidate>
+		          </div>
+		          <div id="parlaysLimit11">
+			          <label for="">Maximum round robin payout</label>
+			          <input placeholder="$" type="Number" name="maxRobinPayout" min="1" novalidate>		          	
+		          </div>
 	          </div>
 	          <div id="teasersLimit" class="wizardStep step2__wizard make-hidden">
+	          	<h5>
+	          		6 / 6
+	          	</h5>
 		          <h4>
 		          	Teasers limit
 		          </h4>
-		          <label for="">Amount of teams</label>
-		          <input id="teasersLimit1" type="Number" name="teasersAmount" min="1" required>
-		          <label for="">Teasers regular push is loss</label>
+		          <h5>
+		          	Regular teaser
+		          </h5>
+		          <label for="">Regular teaser (6 - 6.5 - 7pt fb / 4 - 4.5 - 5pt bk)</label>
 		          <div class="input-radius">
 			          <label for="">Yes</label>
-			          <input id="teasersLimit2" type="radio" name="teasersRegularRush" value="Yes" checked>     	
+			          <input id="teasers1" type="radio" name="regularTeaser" value="Yes" checked>     	
 		          </div>
 		          <div class="input-radius">
 			          <label for="">No</label>
-		  					<input id="teasersLimit3" type="radio" name="teasersRegularRush" value="No">	          	
+		  					<input id="teasers2" type="radio" name="regularTeaser" value="No">	          	
 		          </div>
-		          <label for="">Special teaser (10pt fb / 7pt bk)</label>
+		          <input id="teasers3" placeholder="Amount of teams" type="Number" name="teasersRegAmount" min="1" novalidate>
+		          <div id="teasers4">
+		          	<label for="">Select regular push type</label>
+		            <select name="regPush">
+							    <option value="regReverts">A push it reverts</option>
+							    <option value="regLoss">A push is a loss</option>
+							    <option value="regCancel">A push is a cancel</option>
+							  </select>		          	
+		          </div>
+		          <h5>
+		          	Monster teasers
+		          </h5>
+		          <label for="">Monster teasers (10 - 13pt fb / 8 - 10pt bk)</label>
 		          <div class="input-radius">
 			          <label for="">Yes</label>
-			          <input id="teasersLimit4" type="radio" name="specialTeaser" value="Yes" checked>     	
+			          <input id="teasers5" type="radio" name="monstTeasers" value="Yes" checked>     	
 		          </div>
 		          <div class="input-radius">
 			          <label for="">No</label>
-		  					<input id="teasersLimit5" type="radio" name="specialTeaser" value="No">	          	
+		  					<input id="teasers6" type="radio" name="monstTeasers" value="No">	          	
 		          </div>
-		          <label for="">Monster teasers (10pt fb / 7pt bk)</label>
-		          <div class="input-radius">
-			          <label for="">Yes</label>
-			          <input id="teasersLimit6" type="radio" name="monsterTeasers" value="Yes" checked>     	
+		          <div id="teasers7">
+		          	<label for="">Select monster push type</label>
+			          <select name="monstPush">
+							    <option value="monstLoss">A push is a loss</option>
+							    <option value="monstCancel">A push is a cancel</option>
+							  </select>		          	
 		          </div>
-		          <div class="input-radius">
-			          <label for="">No</label>
-		  					<input id="teasersLimit7" type="radio" name="monsterTeasers" value="No">	          	
-		          </div>
-		          <label for="">Special regular push loss</label>
-		          <div class="input-radius">
-			          <label for="">Yes</label>
-			          <input id="teasersLimit8" type="radio" name="teasersSpecialRush" value="Yes" checked>     	
-		          </div>
-		          <div class="input-radius">
-			          <label for="">No</label>
-		  					<input id="teasersLimit9" type="radio" name="teasersSpecialRush" value="No">	          	
-		          </div>
-		          <label for="">Monster teasers regular push is loss</label>
-		          <div class="input-radius">
-			          <label for="">Yes</label>
-			          <input id="teasersLimit10" type="radio" name="monsterTeasersRegularPush" value="Yes" checked>     	
-		          </div>
-		          <div class="input-radius">
-			          <label for="">No</label>
-		  					<input id="teasersLimit11" type="radio" name="monsterTeasersRegularPush" value="No">	          	
-		          </div>	          	
-	          </div>
-	          <div id="specificLimit" class="wizardStep step2__wizard make-hidden">
-		          <h4>
-		          	Specific limit bet
-		          </h4>
-							<label for="">Maximum contest bet</label>
-		          <input id="" placeholder="$" type="Number" name="specificLimitBet" min="1" required>
-		          <label for="">Maximum contest payout</label>
-		          <input id="" placeholder="$" type="Number" name="specificLimitPayout" min="1" required>
-		         	<label for="">Soccer bet</label>
-		          <input id="" placeholder="$" type="Number" name="specificLimitSoccer" min="1" required>   	
 	          </div>
 	          <p id="step2Message" class="make-hidden step2-message">
 	          	Complete all the form to continue!

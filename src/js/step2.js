@@ -38,8 +38,6 @@ const parlaysLimit8 = document.getElementById('parlaysLimit8');
 const parlaysLimit9 = document.getElementById('parlaysLimit9');
 const parlaysLimit10 = document.getElementById('parlaysLimit10');
 const parlaysLimit11 = document.getElementById('parlaysLimit11');
-const parlaysLimit12 = document.getElementById('parlaysLimit12');
-const parlaysLimit13 = document.getElementById('parlaysLimit13');
 
 const teasers1 = document.getElementById('teasers1');
 const teasers2 = document.getElementById('teasers2');
@@ -48,60 +46,122 @@ const teasers4 = document.getElementById('teasers4');
 const teasers5 = document.getElementById('teasers5');
 const teasers6 = document.getElementById('teasers6');
 const teasers7 = document.getElementById('teasers7');
-const teasers8 = document.getElementById('teasers8');
-const teasers9 = document.getElementById('teasers9');
-const teasers10 = document.getElementById('teasers10');
-const teasers11 = document.getElementById('teasers11');
-
-const specificLimit1 = document.getElementById('specificLimit1');
-const specificLimit2 = document.getElementById('specificLimit2');
-const specificLimit3 = document.getElementById('specificLimit3');
 
 const step2Prev = document.getElementById('step2Prev');
 const step2Next = document.getElementById('step2Next');
 let nextCounter = 1;
+
+const soothTop = function () {
+	$('html, body').animate({
+    scrollTop: $("#step2").offset().top
+	}, 1000);
+};
+
+const showOptions = function (op1, op2) {
+	op1.classList.remove('make-hidden');
+	op1.setAttribute('min', '1')
+	if (op2 !== undefined) {
+		op2.classList.remove('make-hidden');
+		op2.setAttribute('min', '1')
+		op2.value = '';
+	} 
+	op1.value = '';
+};
+
+const hiddeOptions = function (op1, op2) {
+	op1.classList.add('make-hidden');
+	op1.setAttribute('min', '0')
+	op1.value = 0;
+	if (op2 !== undefined) {
+		op2.classList.add('make-hidden');
+		op2.setAttribute('min', '0')
+		op2.value = 0;
+	}
+};
+
+function hiddehorse() {
+	hiddeOptions(horsesLimit3,horsesLimit4);
+}
+
+function showhorse() {
+	showOptions(horsesLimit3,horsesLimit4);
+}
+
+function hiddeTeasersReg() {
+	hiddeOptions(teasers3, teasers4);
+}
+
+function showTeasersReg() {
+	showOptions(teasers3, teasers4);
+}
+
+function hiddeTeasersMonst() {
+	hiddeOptions(teasers7);
+}
+
+function showTeasersMonst() {
+	showOptions(teasers7);
+}
+
+function hiddeParlaySpot() {
+	hiddeOptions(parlaysLimit7);
+}
+
+function showParlaySpot() {
+	showOptions(parlaysLimit7);
+}
+
+function hiddeRobin() {
+	hiddeOptions(parlaysLimit10, parlaysLimit11);
+}
+
+function showRobin() {
+	showOptions(parlaysLimit10, parlaysLimit11);
+}
 
 const nextStep = function () {
 	if (nextCounter == 1 && basicLimit1.value !== '' && basicLimit2.value !== '' && basicLimit3.value !== '') {
 		basicLimit.classList.add('make-hidden');
 		casinoLimit.classList.remove('make-hidden');
 		step2Message.classList.add('make-hidden');
-		nextCounter++
+		nextCounter++;
+		soothTop();
 	} else if (nextCounter == 2 && casinoLimit1.value !== '' && casinoLimit2.value !== '' && casinoLimit3.value !== '' && casinoLimit4.value !== '') {
 		casinoLimit.classList.add('make-hidden');
 		onlineCasinoLimit.classList.remove('make-hidden');
 		step2Message.classList.add('make-hidden');
-		nextCounter++
+		nextCounter++;
+		soothTop();
 	} else if (nextCounter == 3 && onlineCasinoLimit1.value !== '' && onlineCasinoLimit2.value !== '' && onlineCasinoLimit3.value !== '' && onlineCasinoLimit4.value !== '') {
 		onlineCasinoLimit.classList.add('make-hidden');
 		horsesLimit.classList.remove('make-hidden');
 		step2Message.classList.add('make-hidden');
-		nextCounter++
+		nextCounter++;
+		soothTop();
 	} else if (nextCounter == 4 && horsesLimit3.value !== '' && horsesLimit4.value !== '' && (horsesLimit2.checked == true || horsesLimit1.checked == true)) {
 		horsesLimit.classList.add('make-hidden');
 		parlaysLimit.classList.remove('make-hidden');
 		step2Message.classList.add('make-hidden');
-		nextCounter++
-	} else if (nextCounter == 5 && parlaysLimit1.value !== '' && parlaysLimit2.value !== '' && parlaysLimit3.value !== '' && parlaysLimit4.value !== '' && (parlaysLimit5.checked == true || parlaysLimit6.checked == true) && parlaysLimit7.value !== '' && (parlaysLimit8.checked == true || parlaysLimit9.checked == true) && (parlaysLimit10.checked == true || parlaysLimit11.checked == true) && parlaysLimit12.value !== '' && parlaysLimit13.value !== '') {
-	  parlaysLimit.classList.add('make-hidden');
+		nextCounter++;
+		soothTop();
+	} else if (nextCounter == 5 && parlaysLimit1.value !== '' && parlaysLimit2.value !== '' && parlaysLimit3.value !== '' && parlaysLimit4.value !== '' && (parlaysLimit5.checked == true || parlaysLimit6.checked == true) && parlaysLimit7.value !== '' && (parlaysLimit8.checked == true || parlaysLimit9.checked == true) && parlaysLimit10.value !== '' && parlaysLimit11.value !== '') {
+	  	parlaysLimit.classList.add('make-hidden');
 		teasersLimit.classList.remove('make-hidden');
-		step2Message.classList.add('make-hidden');
-		nextCounter++
-	} else if (nextCounter == 6 && teasersLimit1.value !== '' && (teasersLimit2.checked == true || teasersLimit3.checked == true) && (teasersLimit4.checked == true || teasersLimit5.checked == true) && (teasersLimit6.checked == true || teasersLimit7.checked == true) && (teasersLimit8.checked == true || teasersLimit9.checked == true) && (teasersLimit10.checked == true || teasersLimit11.checked == true)) {
-		teasersLimit.classList.add('make-hidden');
-		specificLimit.classList.remove('make-hidden');
 		step2Message.classList.add('make-hidden');
 		step2Next.setAttribute('style', 'display:none;');
 		step2Send.classList.remove('make-hidden'); 
-		nextCounter++
+		nextCounter++;
+		soothTop();
 	} else {
 	  step2Message.classList.remove('make-hidden');
 	}
 };
 
 const prevStep = function (argument) {
-	console.log('jojola')
-	if (nextCounter == 2) {
+	if (nextCounter == 1) {
+		step2.classList.add('make-hidden');
+    	step1.classList.remove('make-hidden');
+	} else if (nextCounter == 2) {
 		casinoLimit.classList.add('make-hidden');
 		basicLimit.classList.remove('make-hidden');
 		step2Message.classList.add('make-hidden');
@@ -125,25 +185,21 @@ const prevStep = function (argument) {
 		teasersLimit.classList.add('make-hidden');
 		parlaysLimit.classList.remove('make-hidden');
 		step2Message.classList.add('make-hidden');
-		nextCounter--
-	} else if (nextCounter == 7) {
-		specificLimit.classList.add('make-hidden');
-		teasersLimit.classList.remove('make-hidden');
-		step2Message.classList.add('make-hidden');
 		step2Next.setAttribute('style', 'display:inline-block;');
 		step2Send.classList.add('make-hidden'); 
 		nextCounter--
 	}
 };
 
-// const basicLimit = document.getElementById('basicLimit');
-// const casinoLimit = document.getElementById('casinoLimit');
-// const onlineCasinoLimit = document.getElementById('onlineCasinoLimit');
-// const horsesLimit = document.getElementById('horsesLimit');
-// const parlaysLimit = document.getElementById('parlaysLimit');
-// const teasersLimit = document.getElementById('teasersLimit');
-// const specificLimit = document.getElementById('specificLimit');
-
-
 step2Next.addEventListener('click', nextStep);
 step2Prev.addEventListener('click', prevStep);
+horsesLimit1.addEventListener('click', showhorse);
+horsesLimit2.addEventListener('click', hiddehorse);
+parlaysLimit5.addEventListener('click', showParlaySpot);
+parlaysLimit6.addEventListener('click', hiddeParlaySpot);
+teasers1.addEventListener('click', showTeasersReg);
+teasers2.addEventListener('click', hiddeTeasersReg);
+teasers5.addEventListener('click', showTeasersMonst);
+teasers6.addEventListener('click', hiddeTeasersMonst);
+parlaysLimit8.addEventListener('click', showRobin);
+parlaysLimit9.addEventListener('click', hiddeRobin);

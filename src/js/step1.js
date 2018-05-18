@@ -17,15 +17,16 @@ const skinDomain2 = document.getElementById('skinDomain2');
 const skinSelected = document.getElementById('skinSelected');
 
 const showModalPrev = function (event) {
-  event.stopPropagation();
   const currSkin = this;
   const SkinImg = currSkin.childNodes[1].src;
   modalSkinImg.src = SkinImg;
   modalPrev.classList.remove('make-hidden');
+  event.stopPropagation(showModalPrev);
 };
 
-const hiddeModalPrev = function () {
+const hiddeModalPrev = function (event) {
   modalPrev.classList.add('make-hidden');
+  event.stopPropagation();
 };
 
 const selectSkin = function (event) {
@@ -62,7 +63,7 @@ const nextStep = function (event) {
   }
 };
 
-// modalPrev.addEventListener('click', hiddeModalPrev);
+modalPrev.addEventListener('click', hiddeModalPrev);
 modalPrevExit.addEventListener('click', hiddeModalPrev);
 
 document.onkeydown = function(evt) {

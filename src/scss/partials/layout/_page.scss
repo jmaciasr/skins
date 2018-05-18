@@ -37,6 +37,11 @@ section {
   display: initial;
 }
 
+.make-disolve {
+  visibility: hidden;
+  height: 0;
+}
+
 .flex-row {
   display: flex;
   flex-wrap: wrap;
